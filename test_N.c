@@ -109,6 +109,47 @@ int Nussinov(int *num_seq,int len,struct Pair *pair_res)
 	return pair_num;
  } 
 
+void DB_notion(int num_pair,struct Pair *pair,int len)
+{
+	printf("%d\n",len);
+	int i=0,j=0,k=num_pair-1;
+	while(j<num_pair){
+		if(i==pair[j].base1){
+			printf("(");
+			j++;
+			i++;
+	}
+		else{
+			printf(".");
+			i++;
+		}
+	}
+	while(i<pair[num_pair-1].base2){
+		printf(".");
+		i++;
+	}
+		//printf("%d\n",i);
+	while(k>=0){
+		if(i==pair[k].base2){
+			printf(")");
+			k--;
+			i++;
+		}
+		else{
+			printf(".");
+			i++;
+		}
+	}
+	while(i<len){
+			i++;
+			printf(".");
+		}
+		
+		//printf("%d\n",i);
+		//printf(".");
+		//i++;
+}
+
 int main(/*int argc,char *argv[]*/){
 	char *seq;
 	int *numseq,res_num;
@@ -162,6 +203,8 @@ int main(/*int argc,char *argv[]*/){
 	for(i=0;i<res_num;i++){
 		printf("%d %d\n",pair[i].base1,pair[i].base2);
 	}
+	//printf DB_notion
+	DB_notion(res_num,pair,len);
 	
 	free(pair);
 	free(seq);
