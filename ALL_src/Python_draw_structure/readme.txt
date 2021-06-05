@@ -1,0 +1,3 @@
+绘制RNA的二级结构，目前很多的算法都是基于ViennaRNA中RNAfold的算法。这个脚本主要是利用了forgi模块，这个模块也是基于ViennaRNA的，所以在使用之前最重要的是要搭建起这个环境来。
+另外一点生信的工具在windows下支持不是很好，特别是想要使用python调用的情况下，可以使用python中的preprocess中Popen函数来调用exe文件,不过只能用RNAfold生成的结果是ps格式的。
+还需要另外转化一下。
