@@ -1,7 +1,8 @@
 #include "Genetic.h"
 void cross(int **popu)
 {
-       extern num_stem;
+  extern NUM;
+  extern num_stem;
         int N = num_stem - 1;
     int i = 0, j = 0;
     int num = 0;
