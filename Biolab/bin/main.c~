@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "Dynamic1.h"
+#include "Dynamic2.h"
+#include "Weight.h"
+
+int main(int argc, int *argv[])
+{
+  FILE *fp1 = fopen(argv[2], "r");
+  FILE *fp2 = fopen("output.txt","w");
+ 
+  if(argv[1] == "-d1")
+    {
+      Dynamic1(fp1, fp2);
+    }
+  if(argv[1] == "-d2")
+    {
+      Dynamic2(fp1, fp2);
+    }
+  if(argv[1] == "-w")
+    {
+      Weight(fp1, fp2);
+    }
+  
+  fclose(fp1);
+  fclose(fp2);
+
+  return 0;
+}
