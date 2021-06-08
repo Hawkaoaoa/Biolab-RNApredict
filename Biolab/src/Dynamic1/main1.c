@@ -15,7 +15,7 @@ void Dynamic1(FILE *fp1, FILE *fp2, char *input, char *output){
 		f++;
 		seq=(char *)malloc(sizeof(char)*MAX_SEQLEN);
 		fgets(seq,MAX_SEQLEN,fp1);
-	      
+
 		len=strlen(seq);
 		if(seq[len-1]=='\n') len--;
 		numseq=(int *)malloc(sizeof(int)*len);
@@ -28,7 +28,7 @@ void Dynamic1(FILE *fp1, FILE *fp2, char *input, char *output){
 	pair=(struct Pair*)malloc(sizeof(struct Pair)*len/2);
 	res_num=Nussinov(numseq,len,pair);
 	DB_notion(res_num,pair,len,output);
-
+    printf("Success!");
 	free(pair);
 	free(numseq);
 	free(seq);

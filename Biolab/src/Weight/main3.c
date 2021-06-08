@@ -13,9 +13,6 @@ void Weight(FILE *inputFile, FILE *outputFile)
     int w1=0, w2=0;
     int k = 0;
 
-    clock_t start, finish;
-    float duration;
-    start = clock();
 #endif
 	char seq[10000];
 
@@ -31,7 +28,7 @@ void Weight(FILE *inputFile, FILE *outputFile)
 	{
         printf("Error! opening file result_1.txt");
         // 文件指针返回 NULL 则退出
-       
+
         exit(1);
     }
 
@@ -178,7 +175,5 @@ void Weight(FILE *inputFile, FILE *outputFile)
 #endif
     }
 
-    finish = clock();
-    duration = (float)(finish - start) / CLOCKS_PER_SEC;
-    printf( "%f seconds\n", duration );
+    printf( "Success!");
 }

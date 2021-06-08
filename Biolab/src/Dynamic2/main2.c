@@ -7,9 +7,6 @@ void Dynamic2(FILE *fp1, FILE*fp2)
     char str[100];
     char seq[100][100];
     int num = 0;
-    clock_t start, finish;
-    float duration;
-
 
     while (fgets(str, 100, fp1) != NULL){
         strcpy(seq[num], str);
@@ -40,8 +37,6 @@ void Dynamic2(FILE *fp1, FILE*fp2)
             fprintf(fp2, "%s", tmp);
             fprintf(fp2, "\n");
     }
- 
-    finish = clock();
-    duration = (float)(finish - start) / CLOCKS_PER_SEC;
-    printf( "%f seconds\n", duration );
+
+    printf( "Success!" );
 }
