@@ -6,15 +6,23 @@
 biolab - predict RNA secondary structure
 
 # Get Start
-git clone https://github.com/Hawkaoaoa/Biolab-RNApredict
-cd Biolab-RNApredict
-ls
-cd Biolab
-make:build a static library
-make install:generate an executable file(/bin/RNA)
-cd bin
-./RNA [Option] [Input Filename] [Output Filename]
-make clean
+`git clone https://github.com/Hawkaoaoa/Biolab-RNApredict`
+
+`cd Biolab-RNApredict`
+
+`ls`
+
+`cd Biolab`
+
+`make:build a static library`
+
+`make install:generate an executable file(/bin/RNA)`
+
+`cd bin`
+
+`./RNA [Option] [Input Filename] [Output Filename]`
+
+`make clean`
 
 # SYNOPSIS
 ./RNA [*-d1d2w*] [Input Filename] [Output Filename]
@@ -40,6 +48,7 @@ This document describes the **biolab** software.**biolab** predict RNA secondary
 :use the weight matching algorithm to predict the RNA sequences stored in RNA.txt.The result is stored in /bin/res.
 
 We strongly recommend you run the genetic algorithm on the server, otherwise it may fail due to computer memory limitations.Here is an example of run genetic algorithm in torque.
+
 `#PBS -S /bin/bash`
 
 `#PBS -N <sc_519111910094>`
@@ -54,9 +63,9 @@ We strongly recommend you run the genetic algorithm on the server, otherwise it 
 
 `#PBS -r y`
 
-cd ${PBS_O_WORKDIR}
+`cd ${PBS_O_WORKDIR}`
 
-mpirun -np 40 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt
+`mpirun -np 40 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt`
 
 # EXIT VALUES
 **0**
@@ -70,13 +79,18 @@ Tests have shown that git clone is prone to failure due to network problems.
 
 # TIPS
 The software includes a Python program that can draw RNA secondary structures based on the predicted results, but it requires the user to have the plug-in installed on the system in advance.
+
 Here are the details:
 The following Python modules need to be installed in advance and are recommended to be installed using Conda, where the Forgi module needs to be installed with the RNA module, which is one of the modules in Viennarna.
 Python recommends installing version 3.6
-conda create-n rnaplot python=3.6
-pip install matplotlib
-pip install forgi
-conda install -c bioconda viennarna
+
+`conda create-n rnaplot python=3.6`
+
+`pip install matplotlib`
+
+`pip install forgi`
+
+`conda install -c bioconda viennarna`
 
 Or you can draw the structure on http://rna.tbi.univie.ac.at/forna/
 
