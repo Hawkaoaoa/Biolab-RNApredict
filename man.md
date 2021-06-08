@@ -1,12 +1,11 @@
-<<<<<<< HEAD
 % BIOLAB-RNAPREDICT(1) biolab 1.0.0
 %Group 4
 %June 2020
 
 # NAME
-biolab \[en] predict RNA secondary structure
+biolab - predict RNA secondary structure
 
-#Get Start
+# Get Start
 git clone https://github.com/Hawkaoaoa/Biolab-RNApredict
 cd Biolab-RNApredict
 ls
@@ -21,9 +20,7 @@ make clean
 ./RNA [*-d1d2w*] [Input Filename] [Output Filename]
 
 # DESCRIPTION
-This document describes the **biolab** software.**biolab** predict RNA secondary structure \
-with Nussinov algorithm, genetic algorithm and weight matching algorithm.By inputing an input file storing RNA sequences,\
-**biolab** can output a file with predicted RNA secondary structure presented in Dot-Bracket Notion.
+This document describes the **biolab** software.**biolab** predict RNA secondary structure with Nussinov algorithm, genetic algorithm and weight matching algorithm.By inputing an input file storing RNA sequences,**biolab** can output a file with predicted RNA secondary structure presented in Dot-Bracket Notion.
 
 # OPTIONS
 **-d1**
@@ -39,13 +36,13 @@ with Nussinov algorithm, genetic algorithm and weight matching algorithm.By inpu
 ./RNA -w RNA.txt res
 :use the weight matching algorithm to predict the RNA sequences stored in RNA.txt.The result is stored in /bin/res.
 We strongly recommend you run the genetic algorithm on the server, otherwise it may fail due to computer memory limitations.Here is an example of run genetic algorithm in torque.
-\#PBS -S /bin/bash
-\#PBS -N <sc_519111910094>
-\#PBS -o ${PBS_JOBID}.o
-\#PBS -e ${PBS_JOBID}.e
-\#PBS -q cpuq
-\#PBS -l nodes=1:ppn=40
-\#PBS -r y
+`#PBS -S /bin/bash`
+`#PBS -N <sc_519111910094>`
+`#PBS -o ${PBS_JOBID}.o`
+`#PBS -e ${PBS_JOBID}.e`
+`#PBS -q cpuq`
+`#PBS -l nodes=1:ppn=40`
+`#PBS -r y`
 cd ${PBS_O_WORKDIR}
 mpirun -np 40 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt
 
@@ -75,69 +72,4 @@ Or you can draw the structure on http://rna.tbi.univie.ac.at/forna/
 Copyrtight © 2021 Group4. This is free software: you are free to change and redistribute it. There is NO WARRANITY, to the extent permitted by law.
 
 
-=======
-# Biolab-RNApredict
-
-## 1. Description
-
-An easy, fast and  relatively accurate tool for users to predict the possible secondary structure of a RNA molecule.
-
-## 2. Install
-
-> As for normal predicting methods
->
-> - Dynamic programming --version-1
-> - Dynamic programming--version-2
-> - Weight matching
-
-Just do as follows:
-
-```bash
-make
-```
-
-This will build the relevant libraries
-
-```bash
-make install
-```
-
-This will install the product
-
-***Tips for use: *** (the executable file named ***RNA***)
-
-./RNA \<options\>  \<your input filename\>  \<your wanted output filename\>
-
-- for options:
-  - `-d1`: Dynamic1
-  - `-d2`: Dynamic2
-  - `-w`: Weight 
-
-> However if you intend to use the Genetic Algorithm, we **strongly** suggested you run it on the server considering the memory bank factors!
-
-Just get in to the `MPI_Genetic` directory, and do exactly the same procedure
-
-```bash
-make
-make install
-```
-
-And you will get an executable file in the `bin` directory.
-
-Then, simply run it on your individual server and enjoy it!
-
-## 3. Other functions
-
-We also provide you with a convenient python program to draw a **2-D graph** for your predicted sequence, but it may need to install some environmental packages to function normally. You can check the details in the manual.
-
-## 4. Authors
-
-This product is supported by:
-
-- Runhan Li
-- Ziyun Chen
-- Songchi Zhou
-
-***School of Life Science and Technology, Shanghai Jiao Tong University***
->>>>>>> fa2953afaa3b63a78c30239ef5052275e305216d
 
