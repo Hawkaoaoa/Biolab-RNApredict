@@ -1,5 +1,5 @@
 #include "Dynamic2.h"
-
+#include <time.h>
 int basepair_match(char B[], int s[][2], int n){
 	int i,j;
 	int t,k;
@@ -12,7 +12,8 @@ int basepair_match(char B[], int s[][2], int n){
 
 	int st[n][n];// 用来记录关键点，即这个已经匹配，方便查找碱基对
 //非关键点时，就是-1 ， 关键点时，记录与之匹配碱基的下标
-
+    int flag = 0;
+    srand((unsigned)time(NULL));
                                         //初始化dp表，L中都赋值为0，st中都赋值为-1
 	for(i=0;i<n;i++)
 		for(j=0;j<n;j++){//初始化
@@ -44,10 +45,21 @@ int basepair_match(char B[], int s[][2], int n){
                         tmp_len = 1 + L[i][t-1] + L[t+1][j-1];          // 在之前的找到一个匹配的
 
                                             //比如当前值比最大值len大，就替换
-					if(max_len < tmp_len){
-						max_len = tmp_len;
-                        tmp = t;
-					}
+					flag = rand() % 2;
+                    if (flag == 0)
+                    {
+                        if(max_len <= tmp_len){
+                            max_len = tmp_len;
+                            tmp = t;
+                        }
+                    }
+                    if (flag == 1)
+                    {
+                        if(max_len < tmp_len){
+                            max_len = tmp_len;
+                            tmp = t;
+                        }
+                    }
 				}
 			}
                                         //碱基配对数没有前面的多，就用前面的值
