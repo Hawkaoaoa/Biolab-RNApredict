@@ -17,7 +17,7 @@ void Dynamic2(FILE *fp1, FILE*fp2)
 
 	int len, i, k;
 	char tmp[100];
-    start = clock();
+
 	for (k=0;k<num;++k)
     {
         for(len=0; seq[k][len]!='\0';len++); //计算字符串B的长度
