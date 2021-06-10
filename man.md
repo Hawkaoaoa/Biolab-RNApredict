@@ -37,18 +37,31 @@ The usage of genetic algorithm  is individually listed in file MPI_Genetic.
 # EXAMPLES
 ./RNA -d1 input.txt output.txt
 :use the Nussinov algorithm(traceback with linked list) to predict the RNA sequences stored in input.txt.The result is stored in /bin/output.txt.
+
 ./RNA -w RNA.txt res
 :use the weight matching algorithm to predict the RNA sequences stored in RNA.txt.The result is stored in /bin/res.
+
 We strongly recommend you run the genetic algorithm on the server, otherwise it may fail due to computer memory limitations.Here is an example of run genetic algorithm in torque.
+
 `#PBS -S /bin/bash`
+
 `#PBS -N <sc_519111910094>`
+
 `#PBS -o ${PBS_JOBID}.o`
+
 `#PBS -e ${PBS_JOBID}.e`
+
 `#PBS -q cpuq`
+
 `#PBS -l nodes=1:ppn=40`
+
 `#PBS -r y`
+
 cd ${PBS_O_WORKDIR}
+
 mpirun -np 40 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt
+
+
 
 # EXIT VALUES
 **0**
