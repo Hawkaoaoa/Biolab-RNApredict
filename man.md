@@ -32,6 +32,8 @@ This document describes the **biolab** software.**biolab** predict RNA secondary
 **-w**
 :use the weight matching algorithm.
 
+The usage of genetic algorithm  is individually listed in file MPI_Genetic.
+
 # EXAMPLES
 ./RNA -d1 input.txt output.txt
 :use the Nussinov algorithm(traceback with linked list) to predict the RNA sequences stored in input.txt.The result is stored in /bin/output.txt.
