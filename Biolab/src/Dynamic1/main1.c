@@ -28,10 +28,10 @@ void Dynamic1(FILE *fp1, FILE *fp2, char *input, char *output){
 	pair=(struct Pair*)malloc(sizeof(struct Pair)*len/2);
 	res_num=Nussinov(numseq,len,pair);
 	DB_notion(res_num,pair,len,output);
-    printf("Success!");
+
 	free(pair);
 	free(numseq);
 	free(seq);
 }
-
+    printf("Success!");
 }
