@@ -25,8 +25,10 @@ This document describes the **biolab** software.**biolab** predict RNA secondary
 # OPTIONS
 **-d1**
 :use the Nussinov algorithm to predict(traceback version1).
+
 **-d2**
 :use the Nussinov algorithm to predict(traceback version2).
+
 **-w**
 :use the weight matching algorithm.
 
