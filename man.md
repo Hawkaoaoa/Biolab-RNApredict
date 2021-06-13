@@ -53,13 +53,13 @@ We strongly recommend you run the genetic algorithm on the server, otherwise it 
 
 `#PBS -q cpuq`
 
-`#PBS -l nodes=1:ppn=40`
+`#PBS -l nodes=1:ppn=10`
 
 `#PBS -r y`
 
 cd ${PBS_O_WORKDIR}
 
-mpirun -np 40 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt
+mpirun -np 10 /home/ug2019/ug519111910094/test/Biolab-RNApredict/Biolab/bin/RNA input.txt
 
 
 
